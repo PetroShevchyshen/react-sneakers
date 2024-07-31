@@ -4,7 +4,7 @@ import { AppContext } from "../App";
 import Info from "../components/Info";
 
 function Drawer({ onCloseCart, onRemove }) {
-  const { cartItems, setCartItems } = useContext(AppContext);
+  const { cartItems, setCartItems, orderSumPrice } = useContext(AppContext);
 
   const [isOrderComplete, setIsOrderComplete] = useState(false);
 
@@ -57,7 +57,7 @@ function Drawer({ onCloseCart, onRemove }) {
                 <li className="d-flex">
                   <span>Загальна ціна:</span>
                   <div></div>
-                  <b>21 498 грн.</b>
+                  <b>{orderSumPrice()} грн.</b>
                 </li>
                 <li className="d-flex">
                   <span>Податок 5%:</span>

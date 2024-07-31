@@ -75,6 +75,14 @@ function App() {
     return cartItems.some((obj) => Number(obj.id) === Number(id));
   };
 
+  const orderSumPrice = () => {
+    let sum = 0;
+    for (const item of cartItems) {
+      sum += item.price;
+    }
+    return sum;
+  };
+
   console.log(items);
   return (
     <AppContext.Provider
@@ -86,6 +94,7 @@ function App() {
         onFavorite,
         setCartItems,
         setCartOpened,
+        orderSumPrice,
       }}
     >
       <div className="wrapper clear">
